@@ -1,11 +1,12 @@
 // Copyright 2021 NNTU-CS
 
 int gcd(int a, int b) {
-int c;
-while (b) {
-c = a % b;
-a = b;
-b = c;        
-}
-return a;
+  if (a < b) {
+    swap(a, b);
+  }
+  while (b) {
+    a %= b;
+    swap(a, b);
+  }
+  return a;
 }
